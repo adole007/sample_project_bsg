@@ -1,0 +1,23 @@
+body{
+    background: WHITE;
+    color: black;
+    font-family: "Candara";
+}
+#billdesc{
+    padding-top: 50px;
+}
+#test{
+    width: 100%;
+    height: 30px;
+}
+option {
+    height: 30px;
+    line-height: 30px;
+}
+
+.editOption{
+    width: 90%;
+    height: 24px;
+    position: relative;
+    top: -30px
+}
