@@ -1,0 +1,6 @@
+Field,Type,Null,Key,Default,Extra
+BankID,int(11),NO,PRI,NULL,auto_increment
+PSN,varchar(50),YES,UNI,NULL,
+BVN,varchar(30),NO,,NULL,
+BankName,varchar(60),NO,,NULL,
+AccountNo,varchar(50),NO,,NULL,

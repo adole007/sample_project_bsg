@@ -1,0 +1,7 @@
+Field,Type,Null,Key,Default,Extra
+TransferID,int(11),NO,PRI,NULL,auto_increment
+PSN,varchar(50),YES,MUL,NULL,
+Type,varchar(60),NO,,NULL,
+From,varchar(70),YES,,NULL,
+To,varchar(70),YES,,NULL,
+EffectiveDate,datetime,NO,,NULL,

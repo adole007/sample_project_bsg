@@ -1,0 +1,12 @@
+Field,Type,Null,Key,Default,Extra
+"Promotion ID",int(11),NO,PRI,NULL,auto_increment
+PSN,varchar(50),YES,MUL,NULL,
+Type,varchar(50),NO,,NULL,
+"Effective Date",datetime,NO,,NULL,
+FromRank,varchar(255),NO,,NULL,
+ToRank,varchar(255),NO,,NULL,
+FromGL,int(11),NO,,NULL,
+ToGL,int(11),NO,,NULL,
+YearofExam,varchar(40),YES,,NULL,
+Remark,varchar(100),YES,,NULL,
+PromotionNotes,varchar(100),YES,,NULL,

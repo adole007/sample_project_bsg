@@ -1,0 +1,10 @@
+Field,Type,Null,Key,Default,Extra
+EducationID,int(11),NO,PRI,NULL,auto_increment
+PSN,varchar(50),YES,MUL,NULL,
+Qualification,varchar(50),NO,,NULL,
+CourseofStudy,varchar(60),NO,,NULL,
+Institution,varchar(60),NO,,NULL,
+YearObtained,varchar(40),NO,,NULL,
+DocumentType,varchar(60),NO,,NULL,
+NYSC,varchar(255),YES,,NULL,
+RecievedYear,varchar(40),YES,,NULL,
