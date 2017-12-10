@@ -1,4 +1,7 @@
-<?php require_once(__DIR__ . '/config/config.php') ?>
+<?php
+    require_once('../../config/config.php');
+    require_once('../routing.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +14,7 @@
     <meta name="author" content="">
     <!--link rel="icon" href="assets/img/favicon.ico"-->
 
-    <title>BSG :: Home</title>
+    <title>BSG :: Employee</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
@@ -38,15 +41,14 @@
 </head>
 <body>
   <div class="container">
-    <?php $tab = "home"; require_once("header.php"); ?>
+    <?php $tab = "employee"; require_once("../../header.php"); ?>
 
-    <div class="jumbotron">
-      <h1>Welcome....</h1>
-      <p class="lead">To Benue State Employees and Pensioner Audit,Verifcation and Enrollment System.</p>
-      <p><a class="btn btn-lg btn-success" href="search/" role="button">Start</a></p>
-    </div>
+    <?php require_once("tabs.php"); ?>
 
-    <?php require_once("footer.php"); ?>
+
+    <?php require_once((($action == 'default') ? 'view' : $action) . ".php"); ?>
+
+    <?php require_once("../../footer.php"); ?>
   </div>
 
 </body>

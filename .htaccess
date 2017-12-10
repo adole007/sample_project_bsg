@@ -1,0 +1,40 @@
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+
+Options -MultiViews -Indexes
+
+RewriteEngine on
+
+#http to https
+#RewriteCond %{HTTPS} !^on$
+#RewriteRule (.*) https://bsg/$1 [R,L]
+
+#move all requests to the index file
+#RewriteRule ^(.*)$ index.php?$1 [L]
+
+RewriteRule ^home http://localhost/projectbsg/index.php [L]
+
+#routing
+RewriteRule ^about/([^/.]+)/?$ views/about/index.php?action=$1 [L]
+RewriteRule ^about views/about/ [L]
+
+RewriteRule ^employee/([^/.]+)/?$ views/employee/index.php?action=$1 [L]
+RewriteRule ^employee views/employee/ [L]
+
+RewriteRule ^search/([^/.]+)/?$ views/search/index.php?action=$1 [L]
+RewriteRule ^search views/search/ [L]
+
+
+#other wise
+ErrorDocument 404 http://localhost/projectbsg/404.php

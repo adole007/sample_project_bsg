@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <!--link rel="icon" href="assets/img/favicon.ico"-->
 
-    <title>BSG :: Home</title>
+    <title>BSG :: Not found</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
@@ -38,12 +38,12 @@
 </head>
 <body>
   <div class="container">
-    <?php $tab = "home"; require_once("header.php"); ?>
+    <?php $tab = ""; require_once("header.php"); ?>
 
     <div class="jumbotron">
-      <h1>Welcome....</h1>
-      <p class="lead">To Benue State Employees and Pensioner Audit,Verifcation and Enrollment System.</p>
-      <p><a class="btn btn-lg btn-success" href="search/" role="button">Start</a></p>
+      <h1>Resource not found</h1>
+      <p class="lead">The requested resource was not found.</p>
+      <p><a class="btn btn-lg btn-success" href="<?= BASE ?>" role="button">Home</a></p>
     </div>
 
     <?php require_once("footer.php"); ?>
