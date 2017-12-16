@@ -45,6 +45,8 @@
 
     <?php require_once("tabs.php"); ?>
 
+    <?php require_once((($action == 'default') ? 'view' : $action) . ".php"); ?>
+
     <?php require_once("../../footer.php"); ?>
   </div>
 

@@ -35,6 +35,9 @@ RewriteRule ^employee views/employee/ [L]
 RewriteRule ^search/([^/.]+)/?$ views/search/index.php?action=$1 [L]
 RewriteRule ^search views/search/ [L]
 
+RewriteRule ^setting/([^/.]+)/?$ views/setting/index.php?action=$1 [L]
+RewriteRule ^setting views/setting/ [L]
+
 
 #other wise
 ErrorDocument 404 http://localhost/projectbsg/404.php

@@ -14,7 +14,7 @@
     <meta name="author" content="">
     <!--link rel="icon" href="assets/img/favicon.ico"-->
 
-    <title>BSG :: About</title>
+    <title>BSG :: Setting</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
@@ -41,7 +41,7 @@
 </head>
 <body>
   <div class="container">
-    <?php $tab = "about"; require_once("../../header.php"); ?>
+    <?php $tab = "setting"; require_once("../../header.php"); ?>
 
     <?php require_once("tabs.php"); ?>
 

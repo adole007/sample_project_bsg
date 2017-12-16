@@ -6,7 +6,11 @@
             <li role="presentation" <?php if ($tab == "home") echo 'class="active"' ?>><a href="home/">Home</a></li>
             <li role="presentation" <?php if ($tab == "search") echo 'class="active"' ?>><a href="search/">Search</a></li>
             <li role="presentation" <?php if ($tab == "employee") echo 'class="active"' ?>><a href="employee/">Employees</a></li>
+            <li role="presentation" <?php if ($tab == "setting") echo 'class="active"' ?>><a href="setting/">Settings</a></li>
             <li role="presentation" <?php if ($tab == "about") echo 'class="active"' ?>><a href="about/">About</a></li>
         </ul>
     </nav>
 </div>
+
+<?php //Alert::setMessage('info', 'Welcome'); 
+Alert::getMessage() ?>
