@@ -7,7 +7,7 @@ $checklist = true;
 $checklist = $checklist
 	AND (isset($_POST['esn']) AND strlen($_POST['esn']) != 0)
 	AND (isset($_POST['status']) AND strlen($_POST['status']) != 0)
-	
+
 	AND (isset($_POST['surname']) AND strlen($_POST['surname']) != 0)
 	AND (isset($_POST['firstname']) AND strlen($_POST['firstname']) != 0)
 	//AND (isset($_POST['middlename']) AND strlen($_POST['middlename']) != 0)
@@ -20,12 +20,13 @@ $checklist = $checklist
 	AND (isset($_POST['pob']) AND strlen($_POST['pob']) != 0)
 	AND (isset($_POST['address_c']) AND strlen($_POST['address_c']) != 0)
 	AND (isset($_POST['address_p']) AND strlen($_POST['address_p']) != 0)
-	
+
 ;
 
 if ($checklist == true)
 {
-
+	$params = $_POST;
+	//$status = Employee::create_bio
 
 	//	header('Location: ../employee.php');
 }

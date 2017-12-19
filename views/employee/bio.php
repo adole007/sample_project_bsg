@@ -14,13 +14,11 @@
       </div>
       <div class="col-lg-6">
         <b>Status</b>
-        <input name="status" type="text" list="Status" class="form-control" />
-        <datalist id="Status">
-          <option>Active</option>
-          <option>Non-Active</option>
-        </datalist>
+        <select name="status" class="form-control">
+            <option value="0">None</option>
+        </select>
       </div>
-       
+
     </div>
 
     <br />
@@ -109,16 +107,22 @@
     <div class="row">
       <div class="col-lg-5">
         <b>State of Origin</b>
-        <input type="text" list="s_origin" class="form-control"/>
+        <select name="s_origin" class="form-control">
+            <option value="0">None</option>
+        </select>
       </div>
       <div class="col-lg-4">
         <b>Local Government Area</b>
-        <input type="text" list="lga_origin" class="form-control" />
-      
+        <select name="lga_origin" class="form-control">
+            <option value="0">None</option>
+        </select>
+
       </div>
       <div class="col-lg-3">
         <b>Other LGA</b>
-        <input type="text" name="lga_other" class="form-control" />
+        <select name="lga_other" class="form-control">
+            <option value="0">None</option>
+        </select>
       </div>
     </div>
     <br />
@@ -142,14 +146,13 @@
     <div class="row">
       <div class="col-lg-4">
         <b>Marital Status</b>
-        <input type="text" name="status_marital" list="status_marital" class="form-control" />
-        <datalist id="status_marital">
-            <Option>Married<Option>
-            <Option>Single<Option>
-            <Option>Widow<Option>
-            <Option>Widower<Option>
-            <Option>Divorced<Option>
-        </datalist>
+        <select name="status_marital" class="form-control">
+            <option value="m">Married</option>
+            <option value="s">Single</option>
+            <option value="w">Widow</option>
+            <!--option value="w">Widower</option-->
+            <option value="d">Divorced</option>
+        </select>
       </div>
       <div class="col-lg-4">
         <b>Number of Children</b>
