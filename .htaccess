@@ -36,6 +36,8 @@ RewriteRule ^search/([^/.]+)/?$ views/search/index.php?action=$1 [L]
 RewriteRule ^search views/search/ [L]
 
 RewriteRule ^setting/([^/.]+)/?$ views/setting/index.php?action=$1 [L]
+RewriteRule ^setting/([^/.]+)/([^/.]+)/?$ views/setting/index.php?action=$1&context=$2 [L]
+RewriteRule ^setting/([^/.]+)/([^/.]+)/([^/.]+)/?$ views/setting/index.php?action=$1&context=$2&param1=$3 [L]
 RewriteRule ^setting views/setting/ [L]
 
 

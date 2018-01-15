@@ -7,19 +7,24 @@ class Database
 	private $_password;
 	private $_database;*/
 
-	public function doConnect($server, $user, $password, $database)
+	public static $conn = null;
+
+	public static function doConnect($server, $user, $password, $database)
 	{
-		$conn = new mysqli($server, $user, $password, $database);
-		if ($conn->connect_errno <= 0)
+		Self::$conn = new mysqli($server, $user, $password, $database);
+		if (Self::$conn->connect_errno <= 0)
 		{
 			//echo $conn->host_info . "\n";
-			return $conn; //Self::getMessage($conn, 'Database opened', 500);
+			//Self::getMessage($conn, 'Database opened', 500);
 		}
 		else
 		{
-			return null; //Self::getMessage(null, $conn->connect_error, $conn->connect_errno);
+			Self::$conn = null;
+			//Self::getMessage(null, $conn->connect_error, $conn->connect_errno);
 		    //echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
 		}
+
+		return Self::$conn;
 	}
 
 	//crud
@@ -27,8 +32,9 @@ class Database
 	//create isn't done from our code
 
 	//read
-	public static function doRead($conn, $statement)
+	public static function doRead($statement)
 	{
+		$conn = Self::$conn;
 		$result_set = array();
 		if($conn->connect_errno <= 0)
 	    {
@@ -46,8 +52,9 @@ class Database
 	}
 
 	//insert
-	public static function doInsert($conn, $statement)
+	public static function doInsert($statement)
 	{
+		$conn = Self::$conn;
 		$created = 0;
 		if($conn->connect_errno <= 0)
         {
@@ -64,9 +71,10 @@ class Database
 	}
 
 	//update
-	public static function doUpdate($conn, $statement)
+	public static function doUpdate($statement)
 	{
-	    if ($conn->connect_errno <= 0)
+		$conn = Self::$conn;
+		if ($conn->connect_errno <= 0)
         {
             if ($statement->execute())
             {
@@ -78,9 +86,10 @@ class Database
 	}
 
 	//delete
-	public static function doDelete($conn, $statement)
+	public static function doDelete($statement)
 	{
-	    if ($conn->connect_errno <= 0)
+		$conn = Self::$conn;
+		if ($conn->connect_errno <= 0)
         {
             if ($statement->execute())
             {

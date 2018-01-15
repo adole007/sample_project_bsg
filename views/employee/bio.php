@@ -1,9 +1,14 @@
+<?php
+require_once(__DIR__ . '/../../models/employee.php');
+Employee::pre();
+?>
+
 <h3>PERSONAL INFORMATION</h3>
 <hr />
 
 <?php $flag = 'create' ?>
 
-<?php if ($flag == 'create' || $flag == 'edit'): ?>
+<?php if (Employee::$context == 'new' || Employee::$context == 'edit'): ?>
 <form action="<?= CONTROLLER ?>employee/create<?= '.php' ?>" method="POST">
   <input name="selector" type="hidden" value="employee.create" />
 
@@ -174,7 +179,7 @@
 </form>
 <?php endif; ?>
 
-<?php if ($flag == 'view'): ?>
+<?php if (Employee::$context == 'view'): ?>
 <div class="row marketing">
   <div class="col-lg-12">
     <b>Employee ID</b>

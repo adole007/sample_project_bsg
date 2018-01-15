@@ -3,10 +3,27 @@
 //class and methods
 class Employee
 {
-    public static function create_bio($conn, $params)
+    //variables
+    public static $conn = null;
+    public static $context = 'view';
+    public static $params = null;
+
+    //to be run before display?
+    public static function pre()
+    {
+
+    }
+
+    //some house keeping function to be run too
+    public static function post()
+    {
+
+    }
+
+    public static function create_bio()
     {
         //$params is a key-value dictionary
-        if ($conn != null)
+        /*if ($conn != null)
         {
             $statement = $conn->prepare("INSERT INTO bio
                 (esn, surname, firstname, middlename, gender, surname_f, firstname_f, middlename_f,
@@ -24,8 +41,9 @@ class Employee
 
             );
 
-        }
+        }*/
     }
 }
 
+Employee::$conn = Database::$conn;
 ?>

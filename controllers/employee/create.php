@@ -1,7 +1,5 @@
 <?php
 
-var_dump($_POST);
-
 $checklist = true;
 
 $checklist = $checklist
@@ -26,7 +24,7 @@ $checklist = $checklist
 if ($checklist == true)
 {
 	$params = $_POST;
-	//$status = Employee::create_bio
+	$status = Employee::create_bio();
 
 	//	header('Location: ../employee.php');
 }
