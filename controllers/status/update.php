@@ -6,15 +6,16 @@ $checklist = true;
 
 $checklist = $checklist
 	AND (isset($_POST['id']) AND strlen($_POST['id']) != 0)
+	AND (isset($_POST['title']) AND strlen($_POST['title']) != 0)
 ;
 
 if ($checklist == true)
 {
-	Mda::$params = $_POST;
+	Status::$params = $_POST;
 
-	$status = Mda::delete();
+	$status = Status::update();
 
-	header('Location: ' . BASE . 'setting/mdas');
+	header('Location: ' . BASE . 'setting/status');
 }
 
 ?>

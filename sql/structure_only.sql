@@ -16,6 +16,84 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `bio`
+--
+
+DROP TABLE IF EXISTS `bio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `esn` varchar(100) NOT NULL,
+  `surname` varchar(100) DEFAULT NULL,
+  `firstname` varchar(100) DEFAULT NULL,
+  `middlename` varchar(100) DEFAULT NULL,
+  `gender` char(1) DEFAULT NULL,
+  `surname_f` varchar(100) DEFAULT NULL,
+  `firstname_f` varchar(100) DEFAULT NULL,
+  `middlename_f` varchar(100) DEFAULT NULL,
+  `dob` varchar(10) DEFAULT NULL,
+  `pob` varchar(100) DEFAULT NULL,
+  `address_c` varchar(300) DEFAULT NULL,
+  `address_p` varchar(45) DEFAULT NULL,
+  `s_origin` int(11) DEFAULT NULL,
+  `lga_origin` int(11) DEFAULT NULL,
+  `lga_other` int(11) DEFAULT NULL,
+  `phone` varchar(25) DEFAULT NULL,
+  `phone_alt` varchar(25) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `status_marital` int(11) DEFAULT NULL,
+  `children` int(11) DEFAULT NULL,
+  `dependents` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `esn_UNIQUE` (`esn`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `id`
+--
+
+DROP TABLE IF EXISTS `id`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `id` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `marital`
+--
+
+DROP TABLE IF EXISTS `marital`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `marital` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `mda`
+--
+
+DROP TABLE IF EXISTS `mda`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mda` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `state`
 --
 
@@ -29,6 +107,20 @@ CREATE TABLE `state` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `status`
+--
+
+DROP TABLE IF EXISTS `status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -39,4 +131,4 @@ CREATE TABLE `state` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-15 15:48:29
+-- Dump completed on 2018-01-17 16:38:04

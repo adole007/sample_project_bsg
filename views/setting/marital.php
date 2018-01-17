@@ -1,14 +1,14 @@
 <?php
 
-Mda::$context = $context;
-Mda::$params = $param1; //or an array
-Mda::pre();
+Marital::$context = $context;
+Marital::$params = $param1; //or an array
+Marital::pre();
 ?>
 
-<?php if (Mda::$context == 'new'): ?>
-    <h3>Create an MDA</h3>
+<?php if (Marital::$context == 'new'): ?>
+    <h3>Create a Marital status</h3>
     <hr />
-    <form method="POST" action="<?= CONTROLLER ?>mda/create<?= '.php' ?>">
+    <form method="POST" action="<?= CONTROLLER ?>marital/create<?= '.php' ?>">
         <div class="row">
             <div class="col-lg-9">
                <b>Title</b>
@@ -25,18 +25,18 @@ Mda::pre();
     </form>
 <?php endif; ?>
 
-<?php if (Mda::$context == 'edit'): ?>
-    <h3>Edit an MDA</h3>
+<?php if (Marital::$context == 'edit'): ?>
+    <h3>Edit a Marital status</h3>
     <hr />
-    <form method="POST" action="<?= CONTROLLER ?>mda/update<?= '.php' ?>">
+    <form method="POST" action="<?= CONTROLLER ?>marital/update<?= '.php' ?>">
         <div class="row">
             <div class="col-lg-3">
                <b>ID</b>
-               <input name="id" type="text" readonly class="form-control" placeholder="ID" value="<?= Mda::$single['id'] ?>" />
+               <input name="id" type="text" readonly class="form-control" placeholder="ID" value="<?= Marital::$single['id'] ?>" />
             </div>
             <div class="col-lg-9">
                <b>Title</b>
-               <input name="title" type="text" class="form-control" placeholder="Title" value="<?= Mda::$single['title'] ?>" />
+               <input name="title" type="text" class="form-control" placeholder="Title" value="<?= Marital::$single['title'] ?>" />
             </div>
         </div>
         <br />
@@ -49,10 +49,10 @@ Mda::pre();
     </form>
 <?php endif; ?>
 
-<?php if (Mda::$context == 'delete'): ?>
-    <h3>Delete an MDA</h3>
+<?php if (Marital::$context == 'delete'): ?>
+    <h3>Delete a Marital status</h3>
     <hr />
-    <form method="POST" action="<?= CONTROLLER ?>mda/delete<?= '.php' ?>">
+    <form method="POST" action="<?= CONTROLLER ?>marital/delete<?= '.php' ?>">
         <div class="row">
             <div class="col-lg-6">
                <b>Confirmation</b>
@@ -72,8 +72,8 @@ Mda::pre();
     </form>
 <?php endif; ?>
 
-<?php if (Mda::$context == 'list'): ?>
-    <h3>MDA
+<?php if (Marital::$context == 'list'): ?>
+    <h3>Martial status
     <a href="<?= $_SERVER['REQUEST_URI'] ?>/new" class="btn btn-success">Add</a></h3>
     <hr />
     <table class="table table-hover mb-0">
@@ -85,7 +85,7 @@ Mda::pre();
             </tr>
         </thead>
         <tbody>
-            <?php $index = 1; foreach (Mda::$list as $single => $details): ?>
+            <?php $index = 1; foreach (Marital::$list as $single => $details): ?>
                 <tr>
                     <td><?= $index ?></td>
                     <td><?= $details['title'] ?></td>

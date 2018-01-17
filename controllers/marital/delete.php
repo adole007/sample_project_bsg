@@ -10,11 +10,11 @@ $checklist = $checklist
 
 if ($checklist == true)
 {
-	Mda::$params = $_POST;
+	Marital::$params = $_POST;
 
-	$status = Mda::delete();
+	$status = Marital::delete();
 
-	header('Location: ' . BASE . 'setting/mdas');
+	header('Location: ' . BASE . 'setting/marital');
 }
 
 ?>

@@ -65,7 +65,7 @@ class Mda
             $statement = Self::$conn->prepare("SELECT id, title FROM mda
                 WHERE id = ?
             ");
-            $statement->bind_param('s',
+            $statement->bind_param('i',
                 Self::$params['id']
             );
             $result = Database::doRead($statement);
@@ -104,7 +104,7 @@ class Mda
             $statement = Self::$conn->prepare("UPDATE mda
                 SET title = ?
                 WHERE id = ?");
-            $statement->bind_param('ss',
+            $statement->bind_param('si',
                 Self::$params['title'], Self::$params['id']
             );
 
@@ -125,7 +125,7 @@ class Mda
         if (!is_null(Self::$conn))
         {
             $statement = Self::$conn->prepare("DELETE FROM mda WHERE id = ?");
-            $statement->bind_param('s',
+            $statement->bind_param('i',
                 Self::$params['id']
             );
 

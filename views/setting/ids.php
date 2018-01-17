@@ -12,7 +12,7 @@ Id::pre();
         <div class="row">
             <div class="col-lg-9">
                <b>Identification</b>
-               <input name="type" type="text" class="form-control" placeholder="type" />
+               <input name="type" type="text" class="form-control" placeholder="Type" />
             </div>
         </div>
         <br />
@@ -26,7 +26,7 @@ Id::pre();
 <?php endif; ?>
 
 <?php if (Id::$context == 'edit'): ?>
-    <h3>Edit a Title</h3>
+    <h3>Edit a Means of Identification</h3>
     <hr />
     <form method="POST" action="<?= CONTROLLER ?>id/update<?= '.php' ?>">
         <div class="row">
@@ -36,7 +36,7 @@ Id::pre();
             </div>
             <div class="col-lg-9">
                <b>Title</b>
-               <input name="type" type="text" class="form-control" placeholder="type" value="<?= Id::$single['type'] ?>" />
+               <input name="type" type="text" class="form-control" placeholder="Type" value="<?= Id::$single['type'] ?>" />
             </div>
         </div>
         <br />
@@ -50,7 +50,7 @@ Id::pre();
 <?php endif; ?>
 
 <?php if (Id::$context == 'delete'): ?>
-    <h3>Delete a Title</h3>
+    <h3>Delete a  Means of Identification</h3>
     <hr />
     <form method="POST" action="<?= CONTROLLER ?>id/delete<?= '.php' ?>">
         <div class="row">

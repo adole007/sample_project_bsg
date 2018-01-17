@@ -1,7 +1,7 @@
 <?php
 
 //class and methods
-class Id
+class Status
 {
     //variables
     public static $conn = null;
@@ -41,9 +41,9 @@ class Id
     {
         if (!is_null(Self::$conn))
         {
-            $statement = Self::$conn->prepare("INSERT INTO id (type) VALUES (?)");
+            $statement = Self::$conn->prepare("INSERT INTO status (title) VALUES (?)");
             $statement->bind_param('s',
-                Self::$params['type']
+                Self::$params['title']
             );
 
             $result = Database::doInsert($statement);
@@ -62,7 +62,7 @@ class Id
     {
         if (!is_null(Self::$conn))
         {
-            $statement = Self::$conn->prepare("SELECT id, type FROM id
+            $statement = Self::$conn->prepare("SELECT id, title FROM status
                 WHERE id = ?
             ");
             $statement->bind_param('i',
@@ -84,7 +84,7 @@ class Id
     {
         if (!is_null(Self::$conn))
         {
-            $statement = Self::$conn->prepare("SELECT id, type FROM id");
+            $statement = Self::$conn->prepare("SELECT id, title FROM status");
             $result = Database::doRead($statement);
 
             Self::$list = $result;
@@ -101,11 +101,11 @@ class Id
     {
         if (!is_null(Self::$conn))
         {
-            $statement = Self::$conn->prepare("UPDATE id
-                SET type = ?
+            $statement = Self::$conn->prepare("UPDATE status
+                SET title = ?
                 WHERE id = ?");
             $statement->bind_param('si',
-                Self::$params['type'], Self::$params['id']
+                Self::$params['title'], Self::$params['id']
             );
 
             $result = Database::doUpdate($statement);
@@ -124,7 +124,7 @@ class Id
     {
         if (!is_null(Self::$conn))
         {
-            $statement = Self::$conn->prepare("DELETE FROM id WHERE id = ?");
+            $statement = Self::$conn->prepare("DELETE FROM status WHERE id = ?");
             $statement->bind_param('i',
                 Self::$params['id']
             );
@@ -144,5 +144,5 @@ class Id
 }
 
 
-Id::$conn = Database::$conn;
+Status::$conn = Database::$conn;
 ?>

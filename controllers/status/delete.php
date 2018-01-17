@@ -10,11 +10,11 @@ $checklist = $checklist
 
 if ($checklist == true)
 {
-	Mda::$params = $_POST;
+	Status::$params = $_POST;
 
-	$status = Mda::delete();
+	$status = Status::delete();
 
-	header('Location: ' . BASE . 'setting/mdas');
+	header('Location: ' . BASE . 'setting/status');
 }
 
 ?>
