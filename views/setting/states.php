@@ -32,15 +32,15 @@ State::pre();
 <?php if (State::$context == 'edit'): ?>
     <h3>Edit a State</h3>
     <hr />
-    <form method="POST" action="<?= CONTROLLER ?>state/create<?= '.php' ?>">
+    <form method="POST" action="<?= CONTROLLER ?>state/update<?= '.php' ?>">
         <div class="row">
             <div class="col-lg-3">
                <b>ID</b>
-               <input name="id" type="text" class="form-control" placeholder="ID" />
+               <input name="id" type="text" readonly class="form-control" placeholder="ID" value="<?= State::$single['id'] ?>" />
             </div>
             <div class="col-lg-9">
                <b>State</b>
-               <input name="state" type="text" class="form-control" placeholder="State" />
+               <input name="state" type="text" class="form-control" placeholder="State" value="<?= State::$single['state'] ?>" />
             </div>
         </div>
         <br />
@@ -64,6 +64,8 @@ State::pre();
             </div>
         </div>
         <br />
+
+        <input name="id" type="hidden" value="<?= $param1 ?>" />
 
         <!-- /button function for this form -->
         <div class="form-group">

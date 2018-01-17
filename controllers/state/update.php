@@ -13,9 +13,7 @@ if ($checklist == true)
 {
 	State::$params = $_POST;
 
-	$status = State::create();
-
-	//var_dump($status);
+	$status = State::update();
 
 	header('Location: ' . BASE . 'setting/states');
 }

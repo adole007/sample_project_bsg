@@ -6,16 +6,13 @@ $checklist = true;
 
 $checklist = $checklist
 	AND (isset($_POST['id']) AND strlen($_POST['id']) != 0)
-	AND (isset($_POST['state']) AND strlen($_POST['state']) != 0)
 ;
 
 if ($checklist == true)
 {
 	State::$params = $_POST;
 
-	$status = State::create();
-
-	//var_dump($status);
+	$status = State::delete();
 
 	header('Location: ' . BASE . 'setting/states');
 }

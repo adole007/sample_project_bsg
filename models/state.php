@@ -9,6 +9,7 @@ class State
     public static $params = null;
 
     public static $list = null;
+    public static $single = null;
     public static $status = 0;
 
     //to be run before display?
@@ -18,8 +19,10 @@ class State
         //edit, read and save in $single
         if (Self::$context == 'edit')
         {
-
-            Self::read_all(Self::$conn);
+            Self::$params = array(
+                'id' => Self::$params
+            );
+            Self::read(Self::$conn);
         }
         //list, read all
         if (Self::$context == 'list')
@@ -43,15 +46,12 @@ class State
                 Self::$params['id'], Self::$params['state']
             );
 
-            var_dump(Self::$params, $statement);
-
             $result = Database::doInsert($statement);
 
             Self::$status = $result;
         }
         else
         {
-            echo 'z';
             Self::$status = null;
         }
 
@@ -62,17 +62,22 @@ class State
     {
         if (!is_null(Self::$conn))
         {
-            $statement = Self::$conn->prepare("SELECT id, state FROM state");
+            $statement = Self::$conn->prepare("SELECT id, state FROM state
+                WHERE id = ?
+            ");
+            $statement->bind_param('s',
+                Self::$params['id']
+            );
             $result = Database::doRead($statement);
 
-            Self::$list = $result;
+            Self::$single = $result[0];
         }
         else
         {
-            Self::$list = null;
+            Self::$single = null;
         }
 
-        return Self::$list;
+        return Self::$single;
     }
 
     public static function read_all()
@@ -90,6 +95,50 @@ class State
         }
 
         return Self::$list;
+    }
+
+    public static function update()
+    {
+        if (!is_null(Self::$conn))
+        {
+            $statement = Self::$conn->prepare("UPDATE state
+                SET state = ?
+                WHERE id = ?");
+            $statement->bind_param('ss',
+                Self::$params['state'], Self::$params['id']
+            );
+
+            $result = Database::doUpdate($statement);
+
+            Self::$status = $result;
+        }
+        else
+        {
+            Self::$status = null;
+        }
+
+        return Self::$status;
+    }
+
+    public static function delete()
+    {
+        if (!is_null(Self::$conn))
+        {
+            $statement = Self::$conn->prepare("DELETE FROM state WHERE id = ?");
+            $statement->bind_param('s',
+                Self::$params['id']
+            );
+
+            $result = Database::doDelete($statement);
+
+            Self::$status = $result;
+        }
+        else
+        {
+            Self::$status = null;
+        }
+
+        return Self::$status;
     }
 
 }
