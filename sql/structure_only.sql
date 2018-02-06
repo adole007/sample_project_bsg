@@ -66,6 +66,21 @@ CREATE TABLE `id` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `lga`
+--
+
+DROP TABLE IF EXISTS `lga`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lga` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `state_id` varchar(2) NOT NULL,
+  `lga` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `marital`
 --
 
@@ -131,4 +146,4 @@ CREATE TABLE `status` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-17 16:38:04
+-- Dump completed on 2018-02-06 18:23:00
